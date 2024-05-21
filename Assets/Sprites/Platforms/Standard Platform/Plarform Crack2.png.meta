@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Plarform Crack2_0: 5127294795336676346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

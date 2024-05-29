@@ -154,7 +154,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bamboo biasa_0: 1479918533876807786
+      bamboo biasa_1: 4008399288095900430
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

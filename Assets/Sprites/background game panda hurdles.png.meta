@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      background game panda hurdles_0: 2209055972285330133
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

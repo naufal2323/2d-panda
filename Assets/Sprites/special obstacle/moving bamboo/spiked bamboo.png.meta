@@ -154,7 +154,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spiked bamboo_0: -292775465545248098
+      spiked bamboo_1: 343913297907340091
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 376
+  controlID: 40
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 377
+  controlID: 41
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 378
+  controlID: 42
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -437,7 +437,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 37490
+  m_LastSelectedObjectID: 34320
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -479,7 +479,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: a2f1ffffdafafffff2850000
+      m_ExpandedIDs: 2eb2ffffdafaffffea850000628600009e94000016950000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1041,9 +1041,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0.2876053, y: 1.2668717, z: -0.028988408}
+    m_Target: {x: 1.0258448, y: 4.8262787, z: -0.084909305}
     speed: 2
-    m_Value: {x: 0.2876053, y: 1.2668717, z: -0.028988408}
+    m_Value: {x: 1.0258448, y: 4.8262787, z: -0.084909305}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1093,9 +1093,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.969277
+    m_Target: 9.100901
     speed: 2
-    m_Value: 6.969277
+    m_Value: 9.100901
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1309,7 +1309,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/prefabs/platfrom bamboo prefab
+    - Assets/script/platfrom script
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1319,16 +1319,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 73
   m_LastFolders:
-  - Assets/prefabs/platfrom bamboo prefab
+  - Assets/script/platfrom script
   m_LastFoldersGridSize: 73
   m_LastProjectPath: D:\unity project\unity gdd project 2d casual game\panda-hurdles
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 22880000
-    m_LastClickedID: 34850
-    m_ExpandedIDs: 000000001e870000208700002287000024870000
+    scrollPos: {x: 0, y: 50.200012}
+    m_SelectedIDs: 408a0000
+    m_LastClickedID: 35392
+    m_ExpandedIDs: 0000000020870000228700002487000026870000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1357,7 +1357,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e870000208700002287000024870000
+    m_ExpandedIDs: 0000000020870000228700002487000026870000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

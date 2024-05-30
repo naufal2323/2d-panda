@@ -81,9 +81,9 @@ public class PlatformSpawner : MonoBehaviour
 
                 platformSpawnCount = 0; // Reset the count
             }
-            if(newPlatform)
+            if (newPlatform)
                 newPlatform.transform.parent = transform;
-                currentPlatformSpawnTimer = platformSpawnTimer;
+            currentPlatformSpawnTimer = platformSpawnTimer;
         }
     }
 }

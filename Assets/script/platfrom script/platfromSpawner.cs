@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class PlatformSpawner : MonoBehaviour
 {
+    [Header("Platform Prefabs")]
     public GameObject platformPrefab;
     public GameObject spikedPlatformPrefab;
     public GameObject[] movingPlatforms;
     public GameObject breakablePlatform;
 
+    [Header("Spawn Settings")]
     public float platformSpawnTimer = 2f;
-    private float currentPlatformSpawnTimer;
-
-    private int platformSpawnCount;
-
     public float minX = -2f, maxX = 2f;
+
+    private float currentPlatformSpawnTimer;
+    private int platformSpawnCount;
 
     void Start()
     {
@@ -30,60 +31,48 @@ public class PlatformSpawner : MonoBehaviour
     {
         currentPlatformSpawnTimer -= Time.deltaTime;
 
-        if (currentPlatformSpawnTimer <= 0)
+        if (currentPlatformSpawnTimer > 0) return;
+
+        platformSpawnCount++;
+        Vector3 spawnPosition = transform.position;
+        spawnPosition.x = Random.Range(minX, maxX);
+
+        GameObject newPlatform = GetPlatformToSpawn(spawnPosition);
+        if (newPlatform != null)
         {
-            platformSpawnCount++;
-
-            Vector3 temp = transform.position;
-            temp.x = Random.Range(minX, maxX);
-
-            GameObject newPlatform = null;
-
-            if (platformSpawnCount < 2)
-            {
-                newPlatform = Instantiate(platformPrefab, temp, Quaternion.identity);
-            }
-            else if (platformSpawnCount == 2)
-            {
-                if (Random.Range(0, 2) > 0)
-                {
-                    newPlatform = Instantiate(platformPrefab, temp, Quaternion.identity);
-                }
-                else
-                {
-                    newPlatform = Instantiate(
-                        movingPlatforms[Random.Range(0, movingPlatforms.Length)],
-                        temp, Quaternion.identity
-                    );
-                }
-            }
-            else if (platformSpawnCount == 3)
-            {
-                if (Random.Range(0, 2) > 0)
-                {
-                    newPlatform = Instantiate(platformPrefab, temp, Quaternion.identity);
-                }
-                else
-                {
-                    newPlatform = Instantiate(spikedPlatformPrefab, temp, Quaternion.identity);
-                }
-            }
-            else if (platformSpawnCount == 4)
-            {
-                if (Random.Range(0, 2) > 0)
-                {
-                    newPlatform = Instantiate(platformPrefab, temp, Quaternion.identity);
-                }
-                else
-                {
-                    newPlatform = Instantiate(breakablePlatform, temp, Quaternion.identity);
-                }
-
-                platformSpawnCount = 0; // Reset the count
-            }
-            if (newPlatform)
-                newPlatform.transform.parent = transform;
-            currentPlatformSpawnTimer = platformSpawnTimer;
+            newPlatform.transform.parent = transform;
         }
+
+        currentPlatformSpawnTimer = platformSpawnTimer;
+    }
+
+    GameObject GetPlatformToSpawn(Vector3 position)
+    {
+        GameObject platformToSpawn = null;
+
+        switch (platformSpawnCount)
+        {
+            case 1:
+                platformToSpawn = Instantiate(platformPrefab, position, Quaternion.identity);
+                break;
+            case 2:
+                platformToSpawn = Random.Range(0, 2) > 0
+                    ? Instantiate(platformPrefab, position, Quaternion.identity)
+                    : Instantiate(movingPlatforms[Random.Range(0, movingPlatforms.Length)], position, Quaternion.identity);
+                break;
+            case 3:
+                platformToSpawn = Random.Range(0, 2) > 0
+                    ? Instantiate(platformPrefab, position, Quaternion.identity)
+                    : Instantiate(spikedPlatformPrefab, position, Quaternion.identity);
+                break;
+            case 4:
+                platformToSpawn = Random.Range(0, 2) > 0
+                    ? Instantiate(platformPrefab, position, Quaternion.identity)
+                    : Instantiate(breakablePlatform, position, Quaternion.identity);
+                platformSpawnCount = 0;
+                break;
+        }
+
+        return platformToSpawn;
     }
 }

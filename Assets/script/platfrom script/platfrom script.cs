@@ -33,7 +33,7 @@ public class platfromscript : MonoBehaviour{
     }// move 
 
     void BreakableDeactivate() {
-        Invoke("DeactivateGameObject", 0.3f);
+        Invoke("DeactivateGameObject", 0.5f);
     }
 
     void DeactivateGameObject() {

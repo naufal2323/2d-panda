@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerbounds : MonoBehaviour{
+public class playerbounds : MonoBehaviour
+{
 
     public float min_X = -2.6f, max_X = 2.6f, min_Y = -5.6f;
     private bool out_Of_Bounds;
@@ -35,7 +36,7 @@ public class playerbounds : MonoBehaviour{
         }
     }// check bound
 
-    private void OnTriggerEnter2D(Collider2D target) {
+    void OnTriggerEnter2D(Collider2D target) {
         if(target.tag == "TopSpike") {
 
             transform.position = new Vector2(1000f, 1000f);

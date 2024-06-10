@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playermovement : MonoBehaviour {
+public class playermovement : MonoBehaviour 
+{
 
     private Rigidbody2D myBody;
 

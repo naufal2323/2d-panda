@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platfromscript : MonoBehaviour
+public class test : MonoBehaviour
 {
-
     public float move_speed = 2f;
     public float bound_Y = 6f;
 
@@ -12,39 +11,47 @@ public class platfromscript : MonoBehaviour
 
     private Animator anim;
 
-    void Awake(){
-        //if(is_Breakable)
-            
+    void Awake()
+    {
+        if (is_Breakable)
+            anim = GetComponent<Animator>();
     }
 
-    void Update(){
+    void Update()
+    {
         Move();
 
     }
 
-     void Move(){
+    void Move()
+    {
         Vector2 temp = transform.position;
         temp.y += move_speed * Time.deltaTime;
         transform.position = temp;
 
-        if(temp.y >= bound_Y)
+        if (temp.y >= bound_Y)
         {
             gameObject.SetActive(false);
         }
     }// move 
 
-    void BreakableDeactivate() {
+    void BreakableDeactivate()
+    {
         Invoke("DeactivateGameObject", 0.5f);
     }
 
-    void DeactivateGameObject() {
+    void DeactivateGameObject()
+    {
         //SoundManager.instance.IceBreakSound();
         gameObject.SetActive(false);
     }
 
-    void OnTriggerEnter2D(Collider2D target) {
-        if(target.tag == "Player") {
-            if (is_Spike) {
+    private void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.tag == "Player")
+        {
+            if (is_Spike)
+            {
 
                 target.transform.position = new Vector2(1000f, 1000f);
                 //SoundManager.instance.GameOverSound();
@@ -53,24 +60,30 @@ public class platfromscript : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D target){
-        if(target.gameObject.tag == "Player") {
+    private void OnCollisionEnter2D(Collision2D target)
+    {
+        if (target.gameObject.tag == "Player")
+        {
 
-            if (is_Breakable) {
+            if (is_Breakable)
+            {
                 //SoundManager.instance.LandSound();
-                anim = GetComponent<Animator>();
-                anim.SetTrigger("break");
+                anim.Play("Break");
             }
 
-            if(is_Platfrom) {
+            if (is_Platfrom)
+            {
                 //SoundManager.instance.LandSound();
             }
         }
     }// on collision enter
 
-   void OnCollisionStay2D(Collision2D target) {
-        if(target.gameObject.tag == "Player") {
-            if(moving_Platfrom_Left) {
+    private void OnCollisionStay2D(Collision2D target)
+    {
+        if (target.gameObject.tag == "Player")
+        {
+            if (moving_Platfrom_Left)
+            {
                 target.gameObject.GetComponent<playermovement>().platformMove(-1f);
             }
 
@@ -79,7 +92,5 @@ public class platfromscript : MonoBehaviour
                 target.gameObject.GetComponent<playermovement>().platformMove(1f);
             }
         }
-    }// on collision stay 
-
-
-}//class
+    }// on collision stay
+}

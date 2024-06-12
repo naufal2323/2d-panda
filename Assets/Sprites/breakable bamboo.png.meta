@@ -154,7 +154,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      breakable bamboo_0: -5408335322393667247
+      breakable bamboo_1: 2239381093869555152
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

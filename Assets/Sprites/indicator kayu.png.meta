@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      indicator kayu_0: 3116176047933707611
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -13,27 +13,22 @@ public class pausemenu : MonoBehaviour
         // Saat ini, tidak ada yang dilakukan pada method Start().
     }
 
-    // Update is called once per frame
-    void Update()
+    // Method untuk toggle pause state
+    public void PauseToggle()
     {
-        // Method Update() dipanggil setiap frame dalam permainan.
-        // Pada bagian ini, kita memeriksa apakah tombol Escape ditekan.
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // Jika menu jeda tidak aktif
+        if (!PauseMenu.activeSelf)
         {
-            // Jika menu jeda tidak aktif
-            if (!PauseMenu.activeSelf)
-            {
-                // Membekukan waktu dalam permainan (Time.timeScale = 0) dan menampilkan menu jeda.
-                Time.timeScale = 0f;
-                PauseMenu.SetActive(true);
-            }
-            // Jika menu jeda aktif
-            else
-            {
-                // Mengembalikan waktu permainan ke kecepatan normal (Time.timeScale = 1) dan menyembunyikan menu jeda.
-                Time.timeScale = 1f;
-                PauseMenu.SetActive(false);
-            }
+            // Membekukan waktu dalam permainan (Time.timeScale = 0) dan menampilkan menu jeda.
+            Time.timeScale = 0f;
+            PauseMenu.SetActive(true);
+        }
+        // Jika menu jeda aktif
+        else
+        {
+            // Mengembalikan waktu permainan ke kecepatan normal (Time.timeScale = 1) dan menyembunyikan menu jeda.
+            Time.timeScale = 1f;
+            PauseMenu.SetActive(false);
         }
     }
 

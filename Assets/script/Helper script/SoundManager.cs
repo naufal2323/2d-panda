@@ -5,9 +5,9 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour {
 
     public static SoundManager instance;
-
-    [SerializeField]
-    private AudioSource soundFX;
+        [SerializeField]
+    public AudioSource soundFX;
+    public AudioSource music;
 
     [SerializeField]
     private AudioClip landClip, deathClip, iceBreakClip, gameOverClip;
@@ -40,5 +40,28 @@ public class SoundManager : MonoBehaviour {
     {
         soundFX.clip = gameOverClip;
         soundFX.Play();
+    }
+    public void MuteSound()
+    {
+        if (music.mute == false)
+        {
+            music.mute = true;
+        }
+        else
+        {
+            music.mute = false;
+        }
+    }
+    // Method untuk mute/unmute SFX
+    public void ToggleSFXMute()
+    {
+        if (soundFX.mute == false)
+        {
+            soundFX.mute = true;
+        }
+        else
+        {
+            soundFX.mute = false;
+        }
     }
 }

@@ -38,7 +38,7 @@ public class platfromscript : MonoBehaviour
     }
 
     void DeactivateGameObject() {
-        //SoundManager.instance.IceBreakSound();
+        SoundManager.instance.IceBreakSound();
         gameObject.SetActive(false);
     }
 
@@ -47,8 +47,8 @@ public class platfromscript : MonoBehaviour
             if (is_Spike) {
 
                 target.transform.position = new Vector2(1000f, 1000f);
-                //SoundManager.instance.GameOverSound();
-                // GameManager.instance.RestartGame();
+                SoundManager.instance.GameOverSound();
+                GameManager.instance.RestartGame();
             }
         }
     }
@@ -57,13 +57,13 @@ public class platfromscript : MonoBehaviour
         if(target.gameObject.tag == "Player") {
 
             if (is_Breakable) {
-                //SoundManager.instance.LandSound();
+                SoundManager.instance.LandSound();
                 anim = GetComponent<Animator>();
                 anim.SetTrigger("break");
             }
 
             if(is_Platfrom) {
-                //SoundManager.instance.LandSound();
+                SoundManager.instance.LandSound();
             }
         }
     }// on collision enter

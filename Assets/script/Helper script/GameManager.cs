@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public GameManager intance;
+    public static GameManager instance;
 
     private void Awake()
     {
-        if (intance == null)
-            intance = this;
+        if (instance == null)
+            instance = this;
     }
 
     public void RestartGame ()

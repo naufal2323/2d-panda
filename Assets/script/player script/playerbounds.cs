@@ -30,8 +30,8 @@ public class playerbounds : MonoBehaviour
 
                 out_Of_Bounds = true;
 
-                // sound manager.instance.DeathSound();
-                //gamemanager.instance.RestartGame();
+                SoundManager.instance.DeathSound();
+                GameManager.instance.RestartGame();
             }
         }
     }// check bound
@@ -40,8 +40,8 @@ public class playerbounds : MonoBehaviour
         if(target.tag == "TopSpike") {
 
             transform.position = new Vector2(1000f, 1000f);
-            //SoundManager.instance.DeathSound();            
-            //GameManager.instance.RestartGame();
+            SoundManager.instance.DeathSound();            
+            GameManager.instance.RestartGame();
         }
     }
 } // class

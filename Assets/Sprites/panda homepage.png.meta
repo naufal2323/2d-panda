@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 766d2438f02d72b48a8f7a004b02f5f6
+guid: ec2ee5c6e543f00459b1a0dcfb9acae9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7327544596577630021
-    second: icon kembali_0
+      213: 9035823269544400257
+    second: panda homepage_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: icon kembali_0
+      name: panda homepage_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 427
-        height: 768
+        x: 120
+        y: 78
+        width: 380
+        height: 365
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 547b7d2dcfaa0b560800000000000000
-      internalID: 7327544596577630021
+      spriteID: 185176ac361b56d70800000000000000
+      internalID: 9035823269544400257
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      icon kembali_0: 7327544596577630021
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

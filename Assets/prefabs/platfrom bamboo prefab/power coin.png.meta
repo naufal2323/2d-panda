@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fdbfa563b07d4d44f8ef5af694b05e2e
+guid: 84939caee9ad6eb4b8f151d2226cd498
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2909074415574685066
-    second: icon setting_0
+      213: -7609365755680914319
+    second: power coin_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: icon setting_0
+      name: power coin_0
       rect:
         serializedVersion: 2
-        x: 115
-        y: 117
-        width: 275
-        height: 271
+        x: 163
+        y: 158
+        width: 175
+        height: 189
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a85918d94cb1f5820800000000000000
-      internalID: 2909074415574685066
+      spriteID: 1740e9e492a166690800000000000000
+      internalID: -7609365755680914319
       vertices: []
       indices: 
       edges: []
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      icon setting_0: 2909074415574685066
+      power coin_0: -7609365755680914319
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

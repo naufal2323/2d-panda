@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panda judul_0: -2229811578379280702
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

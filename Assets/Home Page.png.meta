@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 84939caee9ad6eb4b8f151d2226cd498
+guid: 304ecf64091119a4cb194a081344667f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7609365755680914319
-    second: power coin_0
+      213: -204826849672236093
+    second: Home Page_0
+  - first:
+      213: -8586168054950703070
+    second: Home Page_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: power coin_0
+      name: Home Page_0
       rect:
         serializedVersion: 2
-        x: 163
-        y: 158
-        width: 175
-        height: 189
+        x: 88
+        y: 405
+        width: 572
+        height: 265
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +117,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1740e9e492a166690800000000000000
-      internalID: -7609365755680914319
+      spriteID: 3c3f2d0c01f482df0800000000000000
+      internalID: -204826849672236093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Home Page_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 143
+        width: 482
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2205bde35adc7d880800000000000000
+      internalID: -8586168054950703070
       vertices: []
       indices: 
       edges: []
@@ -130,8 +154,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      power coin_0: -7609365755680914319
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PowerCoinBar : MonoBehaviour
 {
-
     public Slider slider;
 
     public void SetMaxPowerCoin(int powercoin)
@@ -18,6 +17,4 @@ public class PowerCoinBar : MonoBehaviour
     {
         slider.value = powercoin;
     }
-
-
 }

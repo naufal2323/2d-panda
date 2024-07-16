@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Indicator : MonoBehaviour
 {
     public int maxPowerCoin = 100;
     public int currentPowerCoin = 0;
@@ -17,16 +17,7 @@ public class Player : MonoBehaviour
         powerCoinBar.SetPowerCoin(currentPowerCoin); // Update the UI to reflect the initial value
     }
 
-    private void OnTriggerEnter2D(Collider2D Coin)
-    {
-        if (Coin.tag == "MyCoin")
-        {
-            Destroy(Coin.gameObject);
-            AddPower(20); // Assume each MyCoin gives 20 power
-        }
-    }
-
-    void AddPower(int power)
+    public void AddPower(int power)
     {
         currentPowerCoin += power;
 

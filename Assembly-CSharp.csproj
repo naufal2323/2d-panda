@@ -78,6 +78,7 @@
     <Compile Include="Assets\menusfx.cs" />
     <Compile Include="Assets\PanelSwitcher.cs" />
     <Compile Include="Assets\script\platfrom script\platfrom script.cs" />
+    <Compile Include="Assets\CoinSpawner.cs" />
     <Compile Include="Assets\script\BG script\BGscroll.cs" />
     <Compile Include="Assets\pause.cs" />
     <Compile Include="Assets\script\Helper script\SoundManager.cs" />

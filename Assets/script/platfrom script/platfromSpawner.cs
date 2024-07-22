@@ -10,7 +10,7 @@ public class PlatformSpawner : MonoBehaviour
     public GameObject[] movingPlatforms;
     public GameObject breakablePlatform;
     public GameObject coinPrefab;  // Prefab untuk koin
-    public float coinSpawnChance = 0.5f;  // Kesempatan spawn koin
+    public float coinSpawnChance = 0.10f;  // Kesempatan spawn koin
 
     [Header("Spawn Settings")]
     public float platformSpawnTimer = 2f;
@@ -18,10 +18,12 @@ public class PlatformSpawner : MonoBehaviour
 
     private float currentPlatformSpawnTimer;
     private int platformSpawnCount;
+    private Indicator playerIndicator;
 
     void Start()
     {
         currentPlatformSpawnTimer = platformSpawnTimer;
+        playerIndicator = FindObjectOfType<Indicator>();
     }
 
     void Update()
@@ -84,7 +86,8 @@ public class PlatformSpawner : MonoBehaviour
 
     void TrySpawnCoin(GameObject platform)
     {
-        if (Random.value < coinSpawnChance)
+        // Check if player has less than max coins before spawning a new coin
+        if (playerIndicator != null && playerIndicator.currentPowerCoin < playerIndicator.maxPowerCoin && Random.value < coinSpawnChance)
         {
             Vector3 coinPosition = platform.transform.position;
             coinPosition.y += 0.5f; // Atur posisi di atas platform

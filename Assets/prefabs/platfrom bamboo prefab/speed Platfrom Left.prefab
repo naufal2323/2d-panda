@@ -199,8 +199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 2
   bound_Y: 6
-  moving_Platfrom_Left: 1
-  moving_Platfrom_Right: 0
+  moving_Platform_Left: 1
+  moving_Platform_Right: 0
   is_Breakable: 0
   is_Spike: 0
-  is_Platfrom: 0
+  is_Platform: 0

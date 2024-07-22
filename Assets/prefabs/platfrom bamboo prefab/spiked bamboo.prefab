@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1077341314777833581}
   m_Layer: 0
   m_Name: spiked bamboo
-  m_TagString: Untagged
+  m_TagString: Spiked Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

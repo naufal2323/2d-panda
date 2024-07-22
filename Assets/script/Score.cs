@@ -8,7 +8,6 @@ public class Score : MonoBehaviour
     public Text MyscoreText;
     private int ScoreNum;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +15,12 @@ public class Score : MonoBehaviour
         MyscoreText.text = ScoreNum.ToString();
     }
 
-    private void OnTriggerEnter2D(Collider2D Platfrom)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Platfrom.tag == "Platfrom")
+        // Check if the player collides with a platform
+        if (collision.gameObject.CompareTag("Score Platform") )
         {
             ScoreNum += 1;
-            Destroy(Platfrom.gameObject);
             MyscoreText.text = ScoreNum.ToString();
         }
     }

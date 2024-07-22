@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Indicator : MonoBehaviour
 {
-    public int maxPowerCoin = 100;
+    public int maxPowerCoin = 5; // Maximum power coins needed for shield
     public int currentPowerCoin = 0;
+    public bool hasShield = false; // Indicates if the player has a shield
 
     public PowerCoinBar powerCoinBar;
 
@@ -22,11 +23,22 @@ public class Indicator : MonoBehaviour
         currentPowerCoin += power;
 
         // Ensure the currentPowerCoin does not exceed the maxPowerCoin
-        if (currentPowerCoin > maxPowerCoin)
+        if (currentPowerCoin >= maxPowerCoin)
         {
-            currentPowerCoin = maxPowerCoin;
+            hasShield = true; // Player gains shield
+            currentPowerCoin = maxPowerCoin; // Set coins to max (5)
         }
 
         powerCoinBar.SetPowerCoin(currentPowerCoin);
+    }
+
+    public void UseShield()
+    {
+        if (hasShield)
+        {
+            hasShield = false; // Use the shield
+            currentPowerCoin = 0; // Reset power coins
+            powerCoinBar.SetPowerCoin(currentPowerCoin); // Update the UI
+        }
     }
 }

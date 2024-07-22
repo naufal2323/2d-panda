@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerCoinScript : MonoBehaviour
 {
-    public int powerValue = 20;  // Nilai power untuk setiap koin
+    public int powerValue = 1; // Nilai power untuk setiap koin
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,8 +13,11 @@ public class PowerCoinScript : MonoBehaviour
             Indicator playerIndicator = other.GetComponent<Indicator>();
             if (playerIndicator != null)
             {
-                playerIndicator.AddPower(powerValue);
-                Destroy(gameObject); // Hancurkan koin setelah diambil
+                if (playerIndicator.currentPowerCoin < playerIndicator.maxPowerCoin)
+                {
+                    playerIndicator.AddPower(powerValue);
+                    Destroy(gameObject); // Hancurkan koin setelah diambil
+                }
             }
         }
     }

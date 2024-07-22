@@ -1,37 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinSpawner : MonoBehaviour
 {
-    public GameObject coinPrefab; // Prefab coin
-    public GameObject[] platformPrefabs; // Array prefab platform di mana coin akan muncul
-    public float spawnInterval = 5f; // Interval waktu untuk spawn coin
-    public Vector3 platformSpawnPosition = new Vector3(0, -3, 0); // Posisi spawn platform
+    public GameObject coinPrefab;
+    public float spawnInterval = 2f; // Interval waktu untuk spawn koin
+    public Transform[] spawnPoints;
 
-    private void Start()
+    private Indicator playerIndicator;
+    private float nextSpawnTime;
+
+    void Start()
     {
-        InvokeRepeating("SpawnCoin", 0f, spawnInterval);
+        playerIndicator = FindObjectOfType<Indicator>();
+        nextSpawnTime = Time.time + spawnInterval;
+    }
+
+    void Update()
+    {
+        if (Time.time >= nextSpawnTime)
+        {
+            if (playerIndicator != null && playerIndicator.currentPowerCoin < playerIndicator.maxPowerCoin)
+            {
+                SpawnCoin();
+                nextSpawnTime = Time.time + spawnInterval;
+            }
+        }
     }
 
     void SpawnCoin()
     {
-        if (platformPrefabs.Length == 0)
-            return;
-
-        // Pilih prefab platform secara acak
-        int randomIndex = Random.Range(0, platformPrefabs.Length);
-        GameObject selectedPlatformPrefab = platformPrefabs[randomIndex];
-
-        // Instansiasi platform pada posisi yang diinginkan
-        GameObject platformInstance = Instantiate(selectedPlatformPrefab, platformSpawnPosition, Quaternion.identity);
-
-        // Hitung posisi coin di atas platform
-        Vector3 spawnPosition = platformInstance.transform.position;
-        spawnPosition.y += 1f; // Sesuaikan nilai ini untuk menempatkan coin di atas platform
-
-        // Spawn coin di posisi tersebut
-        GameObject coinInstance = Instantiate(coinPrefab, spawnPosition, Quaternion.identity);
-
-        // Pastikan skala coin sesuai dengan yang diinginkan
-        coinInstance.transform.localScale = new Vector3(1, 1, 1);
+        int randomIndex = Random.Range(0, spawnPoints.Length);
+        Instantiate(coinPrefab, spawnPoints[randomIndex].position, Quaternion.identity);
     }
 }

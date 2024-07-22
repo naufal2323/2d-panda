@@ -8,6 +8,9 @@ TagManager:
   - TopSpike
   - Platfrom
   - MyCoin
+  - Speed Platform
+  - Score Platform
+  - Spiked Platform
   layers:
   - Default
   - TransparentFX

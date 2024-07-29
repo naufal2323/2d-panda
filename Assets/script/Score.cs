@@ -18,10 +18,11 @@ public class Score : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if the player collides with a platform
-        if (collision.gameObject.CompareTag("Score Platform") )
+        if (collision.gameObject.CompareTag("Score Platform"))
         {
             ScoreNum += 1;
             MyscoreText.text = ScoreNum.ToString();
+            GameManager2.instance.AddScore(1); // Update the global score in GameManager2
         }
     }
 }

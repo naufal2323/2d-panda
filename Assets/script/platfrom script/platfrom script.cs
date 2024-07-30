@@ -71,15 +71,39 @@ public class platfromscript : MonoBehaviour
    void OnCollisionStay2D(Collision2D target) {
         if(target.gameObject.tag == "Player") {
             if(moving_Platfrom_Left) {
-                target.gameObject.GetComponent<playermovement>().platformMove(-1f);
+                target.gameObject.GetComponent<PlayerMovement>().PlatformMove(-1f);
             }
 
             if (moving_Platfrom_Right)
             {
-                target.gameObject.GetComponent<playermovement>().platformMove(1f);
+                target.gameObject.GetComponent<PlayerMovement>().PlatformMove(1f);
             }
         }
     }// on collision stay 
 
 
 }//class
+
+
+public class PlatformScript : MonoBehaviour
+{
+    private PlayerMovement playerMovement;
+
+    void Start()
+    {
+        GameObject player = GameObject.Find("Player"); // Sesuaikan dengan nama objek pemain Anda
+        if (player != null)
+        {
+            playerMovement = player.GetComponent<PlayerMovement>();
+        }
+    }
+
+    void SomeFunction()
+    {
+        if (playerMovement != null)
+        {
+            playerMovement.PlatformMove(5f); // Memanggil metode PlatformMove dengan nilai x
+        }
+    }
+}
+

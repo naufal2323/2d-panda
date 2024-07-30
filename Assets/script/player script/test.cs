@@ -84,12 +84,12 @@ public class test : MonoBehaviour
         {
             if (moving_Platfrom_Left)
             {
-                target.gameObject.GetComponent<playermovement>().platformMove(-1f);
+                target.gameObject.GetComponent<PlayerMovement>().PlatformMove(-1f);
             }
 
             if (moving_Platfrom_Right)
             {
-                target.gameObject.GetComponent<playermovement>().platformMove(1f);
+                target.gameObject.GetComponent<PlayerMovement>().PlatformMove(1f);
             }
         }
     }// on collision stay

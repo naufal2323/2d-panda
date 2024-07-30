@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      icon kembali_0: 7327544596577630021
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -74,6 +74,7 @@
     <Compile Include="Assets\script\Helper script\GameManager.cs" />
     <Compile Include="Assets\script\Score.cs" />
     <Compile Include="Assets\MainMenuController.cs" />
+    <Compile Include="Assets\script\GameManager2.cs" />
     <Compile Include="Assets\script\indicator power coin script\PowerCoinBar.cs" />
     <Compile Include="Assets\menusfx.cs" />
     <Compile Include="Assets\script\powertext.cs" />

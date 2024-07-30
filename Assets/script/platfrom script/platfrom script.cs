@@ -10,12 +10,18 @@ public class platformscript : MonoBehaviour
     public bool moving_Platform_Left, moving_Platform_Right, is_Breakable, is_Spike, is_Platform;
 
     private Animator anim;
+    private Collider2D spikeCollider;
 
     void Awake()
     {
         if (is_Breakable)
         {
             anim = GetComponent<Animator>();
+        }
+
+        if (is_Spike)
+        {
+            spikeCollider = GetComponent<Collider2D>();
         }
     }
 
@@ -59,14 +65,24 @@ public class platformscript : MonoBehaviour
                 {
                     playerIndicator.UseShield(); // Use the shield and prevent player from dying
                     Debug.Log("Shield used! Player is safe.");
+                    spikeCollider.isTrigger = false; // Disable trigger to allow player to stand on spike
                 }
                 else
                 {
                     target.transform.position = new Vector2(1000f, 1000f);
                     SoundManager.instance.GameOverSound();
                     GameManager.instance.RestartGame();
+                    GameManager2.instance.GameOver();
                 }
             }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D target)
+    {
+        if (target.CompareTag("Player") && is_Spike)
+        {
+            spikeCollider.isTrigger = true; // Re-enable trigger when player leaves spike platform
         }
     }
 
@@ -74,6 +90,8 @@ public class platformscript : MonoBehaviour
     {
         if (target.gameObject.CompareTag("Player"))
         {
+            Indicator playerIndicator = target.gameObject.GetComponent<Indicator>();
+
             if (is_Breakable)
             {
                 SoundManager.instance.LandSound();
@@ -84,6 +102,12 @@ public class platformscript : MonoBehaviour
             {
                 SoundManager.instance.LandSound();
             }
+
+            if (is_Spike && playerIndicator != null && playerIndicator.hasShield)
+            {
+                // Prevent any further action, allowing player to stay on spiked platform
+                return;
+            }
         }
     }
 
@@ -91,6 +115,8 @@ public class platformscript : MonoBehaviour
     {
         if (target.gameObject.CompareTag("Player"))
         {
+            Indicator playerIndicator = target.gameObject.GetComponent<Indicator>();
+
             if (moving_Platform_Left)
             {
                 target.gameObject.GetComponent<playermovement>().platformMove(-1f);
@@ -99,6 +125,12 @@ public class platformscript : MonoBehaviour
             if (moving_Platform_Right)
             {
                 target.gameObject.GetComponent<playermovement>().platformMove(1f);
+            }
+
+            if (is_Spike && playerIndicator != null && playerIndicator.hasShield)
+            {
+                // Prevent any further action, allowing player to stay on spiked platform
+                return;
             }
         }
     }

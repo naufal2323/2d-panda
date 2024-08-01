@@ -47,7 +47,7 @@ public class PlatformSpawner : MonoBehaviour
             newPlatform.transform.parent = transform;
         }
 
-        currentPlatformSpawnTimer = platformSpawnTimer;
+        currentPlatformSpawnTimer = platformSpawnTimer; // Reset the timer after spawning a platform
     }
 
     GameObject GetPlatformToSpawn(Vector3 position)
@@ -90,17 +90,17 @@ public class PlatformSpawner : MonoBehaviour
         if (playerIndicator != null && playerIndicator.currentPowerCoin < playerIndicator.maxPowerCoin && Random.value < coinSpawnChance)
         {
             Vector3 coinPosition = platform.transform.position;
-            coinPosition.y += 0.5f; // Atur posisi di atas platform
+            coinPosition.y += 0.5f; // Set position above platform
 
-            // Tambahkan variasi pada posisi X koin dengan margin
+            // Add variation to the coin's X position with margin
             float platformWidth = platform.GetComponent<SpriteRenderer>().bounds.size.x;
-            float margin = platformWidth * 0.1f; // Margin 10% di kedua sisi
+            float margin = platformWidth * 0.1f; // 10% margin on both sides
             coinPosition.x += Random.Range(-platformWidth / 2 + margin, platformWidth / 2 - margin);
 
             GameObject newCoin = Instantiate(coinPrefab, coinPosition, Quaternion.identity);
             newCoin.transform.parent = transform;
 
-            // Nonaktifkan gravitasi pada Rigidbody2D koin
+            // Disable gravity on the coin's Rigidbody2D
             Rigidbody2D rb = newCoin.GetComponent<Rigidbody2D>();
             if (rb != null)
             {

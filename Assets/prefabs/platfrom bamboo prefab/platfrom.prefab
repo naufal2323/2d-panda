@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1942314844107126572}
   m_Layer: 0
   m_Name: platfrom
-  m_TagString: Untagged
+  m_TagString: Score Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,8 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 2
   bound_Y: 6
-  moving_Platfrom_Left: 0
-  moving_Platfrom_Right: 0
+  moving_Platform_Left: 0
+  moving_Platform_Right: 0
   is_Breakable: 0
   is_Spike: 0
-  is_Platfrom: 1
+  is_Platform: 1

@@ -13,7 +13,15 @@ public class menusfx : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SoundManager.instance.soundFX.mute == true)
+        {
 
+            buttonMute.image.sprite = spriteMute[1];
+        }
+        else
+        {
+            buttonMute.image.sprite = spriteMute[0];
+        }
     }
 
     // Update is called once per frame

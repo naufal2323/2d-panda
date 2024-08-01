@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1077341314777833581}
   m_Layer: 0
   m_Name: spiked bamboo
-  m_TagString: Untagged
+  m_TagString: Spiked Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,8 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 2
   bound_Y: 6
-  moving_Platfrom_Left: 0
-  moving_Platfrom_Right: 0
+  moving_Platform_Left: 0
+  moving_Platform_Right: 0
   is_Breakable: 0
   is_Spike: 1
-  is_Platfrom: 0
+  is_Platform: 0

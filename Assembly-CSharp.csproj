@@ -62,20 +62,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\script\indicator power coin script\Indicator.cs" />
+    <Compile Include="Assets\gamesfx.cs" />
+    <Compile Include="Assets\game.cs" />
     <Compile Include="Assets\pausemenu.cs" />
     <Compile Include="Assets\script\player script\playerbounds.cs" />
     <Compile Include="Assets\script\setting\menu.cs" />
+    <Compile Include="Assets\GameInitializer.cs" />
+    <Compile Include="Assets\NewGameButtonHandler.cs" />
     <Compile Include="Assets\script\player script\test.cs" />
     <Compile Include="Assets\script\indicator power coin script\PowerCoinScript.cs" />
     <Compile Include="Assets\script\Helper script\GameManager.cs" />
     <Compile Include="Assets\script\Score.cs" />
+    <Compile Include="Assets\MainMenuController.cs" />
+    <Compile Include="Assets\script\GameManager2.cs" />
     <Compile Include="Assets\script\indicator power coin script\PowerCoinBar.cs" />
     <Compile Include="Assets\menusfx.cs" />
+    <Compile Include="Assets\script\powertext.cs" />
     <Compile Include="Assets\PanelSwitcher.cs" />
     <Compile Include="Assets\script\platfrom script\platfrom script.cs" />
+    <Compile Include="Assets\CoinSpawner.cs" />
     <Compile Include="Assets\script\BG script\BGscroll.cs" />
+    <Compile Include="Assets\pause.cs" />
     <Compile Include="Assets\script\Helper script\SoundManager.cs" />
     <Compile Include="Assets\script\player script\player movement.cs" />
+    <Compile Include="Assets\script\PlayerShield.cs" />
     <Compile Include="Assets\script\platfrom script\platfromSpawner.cs" />
   </ItemGroup>
   <ItemGroup>

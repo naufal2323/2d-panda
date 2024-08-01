@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pausemenu : MonoBehaviour
 {
@@ -33,9 +34,10 @@ public class pausemenu : MonoBehaviour
     }
 
     // Method untuk keluar dari permainan
-    public void Quit()
+    // Method untuk keluar dan kembali ke Start Menu
+    public void QuitToStartMenu()
     {
-        Application.Quit(); // Menutup aplikasi/game
+        SceneManager.LoadScene("Start Menu");
     }
 
     // Method untuk melanjutkan permainan setelah dijeda

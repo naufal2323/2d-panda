@@ -1,28 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ScoreScript : MonoBehaviour
+public class PowerCoinScript : MonoBehaviour
 {
-    public Text MyscoreText;
-    private int ScoreNum;
+    public int powerValue = 1; // Nilai power untuk setiap koin
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        ScoreNum = 0;
-        MyscoreText.text = ScoreNum + "/5";
-    }
-
-    private void OnTriggerEnter2D(Collider2D Coin)
-    {
-        if (Coin.tag == "MyCoin")
+        if (other.CompareTag("Player"))
         {
-            ScoreNum += 1;
-            Destroy(Coin.gameObject);
-            MyscoreText.text = ScoreNum + "/5";
+            Indicator playerIndicator = other.GetComponent<Indicator>();
+            if (playerIndicator != null)
+            {
+                if (playerIndicator.currentPowerCoin < playerIndicator.maxPowerCoin)
+                {
+                    playerIndicator.AddPower(powerValue);
+                    Destroy(gameObject); // Hancurkan koin setelah diambil
+                }
+            }
         }
     }
 }

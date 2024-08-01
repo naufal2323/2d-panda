@@ -2,108 +2,136 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platfromscript : MonoBehaviour
+public class platformscript : MonoBehaviour
 {
-
     public float move_speed = 2f;
     public float bound_Y = 6f;
 
-    public bool moving_Platfrom_Left, moving_Platfrom_Right, is_Breakable, is_Spike, is_Platfrom;
+    public bool moving_Platform_Left, moving_Platform_Right, is_Breakable, is_Spike, is_Platform;
 
     private Animator anim;
+    private Collider2D spikeCollider;
 
-    void Awake(){
-        //if(is_Breakable)
-            
+    void Awake()
+    {
+        if (is_Breakable)
+        {
+            anim = GetComponent<Animator>();
+        }
+
+        if (is_Spike)
+        {
+            spikeCollider = GetComponent<Collider2D>();
+        }
     }
 
-    void Update(){
+    void Update()
+    {
         Move();
-
     }
 
-     void Move(){
+    void Move()
+    {
         Vector2 temp = transform.position;
         temp.y += move_speed * Time.deltaTime;
         transform.position = temp;
 
-        if(temp.y >= bound_Y)
+        if (temp.y >= bound_Y)
         {
             gameObject.SetActive(false);
         }
-    }// move 
+    }
 
-    void BreakableDeactivate() {
+    void BreakableDeactivate()
+    {
         Invoke("DeactivateGameObject", 0.5f);
     }
 
-    void DeactivateGameObject() {
+    void DeactivateGameObject()
+    {
         SoundManager.instance.IceBreakSound();
         gameObject.SetActive(false);
     }
 
-    void OnTriggerEnter2D(Collider2D target) {
-        if(target.tag == "Player") {
-            if (is_Spike) {
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.CompareTag("Player"))
+        {
+            Indicator playerIndicator = target.GetComponent<Indicator>();
 
-                target.transform.position = new Vector2(1000f, 1000f);
-                SoundManager.instance.GameOverSound();
-                GameManager.instance.RestartGame();
+            if (is_Spike)
+            {
+                if (playerIndicator != null && playerIndicator.hasShield)
+                {
+                    playerIndicator.UseShield(); // Use the shield and prevent player from dying
+                    Debug.Log("Shield used! Player is safe.");
+                    spikeCollider.isTrigger = false; // Disable trigger to allow player to stand on spike
+                }
+                else
+                {
+                    target.transform.position = new Vector2(1000f, 1000f);
+                    SoundManager.instance.GameOverSound();
+                    GameManager.instance.RestartGame();
+                    GameManager2.instance.GameOver();
+                }
             }
         }
     }
 
-    void OnCollisionEnter2D(Collision2D target){
-        if(target.gameObject.tag == "Player") {
+    void OnTriggerExit2D(Collider2D target)
+    {
+        if (target.CompareTag("Player") && is_Spike)
+        {
+            spikeCollider.isTrigger = true; // Re-enable trigger when player leaves spike platform
+        }
+    }
 
-            if (is_Breakable) {
+    void OnCollisionEnter2D(Collision2D target)
+    {
+        if (target.gameObject.CompareTag("Player"))
+        {
+            Indicator playerIndicator = target.gameObject.GetComponent<Indicator>();
+
+            if (is_Breakable)
+            {
                 SoundManager.instance.LandSound();
-                anim = GetComponent<Animator>();
                 anim.SetTrigger("break");
             }
 
-            if(is_Platfrom) {
+            if (is_Platform)
+            {
                 SoundManager.instance.LandSound();
             }
-        }
-    }// on collision enter
 
-   void OnCollisionStay2D(Collision2D target) {
-        if(target.gameObject.tag == "Player") {
-            if(moving_Platfrom_Left) {
-                target.gameObject.GetComponent<PlayerMovement>().PlatformMove(-1f);
+            if (is_Spike && playerIndicator != null && playerIndicator.hasShield)
+            {
+                // Prevent any further action, allowing player to stay on spiked platform
+                return;
+            }
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D target)
+    {
+        if (target.gameObject.CompareTag("Player"))
+        {
+            Indicator playerIndicator = target.gameObject.GetComponent<Indicator>();
+
+            if (moving_Platform_Left)
+            {
+                target.gameObject.GetComponent<playermovement>().platformMove(-1f);
             }
 
-            if (moving_Platfrom_Right)
+            if (moving_Platform_Right)
             {
                 target.gameObject.GetComponent<PlayerMovement>().PlatformMove(1f);
             }
-        }
-    }// on collision stay 
 
-
-}//class
-
-
-public class PlatformScript : MonoBehaviour
-{
-    private PlayerMovement playerMovement;
-
-    void Start()
-    {
-        GameObject player = GameObject.Find("Player"); // Sesuaikan dengan nama objek pemain Anda
-        if (player != null)
-        {
-            playerMovement = player.GetComponent<PlayerMovement>();
-        }
-    }
-
-    void SomeFunction()
-    {
-        if (playerMovement != null)
-        {
-            playerMovement.PlatformMove(5f); // Memanggil metode PlatformMove dengan nilai x
+            if (is_Spike && playerIndicator != null && playerIndicator.hasShield)
+            {
+                // Prevent any further action, allowing player to stay on spiked platform
+                return;
+            }
         }
     }
 }
-

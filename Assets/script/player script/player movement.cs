@@ -2,71 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class playermovement : MonoBehaviour
 {
     private Rigidbody2D myBody;
-    public float moveSpeed = 2f;
-
-    private Vector2 startTouchPosition;
-    private Vector2 endTouchPosition;
-    private bool isDragging = false;
+    public float movespeed = 2f;
 
     void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        HandleTouch();
+        Move();
     }
 
-    void HandleTouch()
+    void Move()
     {
-        if (Input.touchCount > 0 )
+        if (Input.GetAxisRaw("Horizontal") > 0f)
         {
-            Touch touch = Input.GetTouch(0);
+            myBody.velocity = new Vector2(movespeed, myBody.velocity.y);
+        }
 
-            switch (touch.phase)
-            {
-                case TouchPhase.Began:
-                    startTouchPosition = touch.position;
-                    isDragging = true;
-                    break;
-
-                case TouchPhase.Moved:
-                    if (isDragging)
-                    {
-                        endTouchPosition = touch.position;
-                        Vector2 swipeDirection = endTouchPosition - startTouchPosition;
-
-                        if (Mathf.Abs(swipeDirection.x) > Mathf.Abs(swipeDirection.y))
-                        {
-                            // Horizontal swipe
-                            if (swipeDirection.x > 0)
-                            {
-                                // Right swipe
-                                myBody.velocity = new Vector2(moveSpeed, myBody.velocity.y);
-                            }
-                            else
-                            {
-                                // Left swipe
-                                myBody.velocity = new Vector2(-moveSpeed, myBody.velocity.y);
-                            }
-                        }
-                        startTouchPosition = endTouchPosition; // Update start position for continuous swipe
-                    }
-                    break;
-
-                case TouchPhase.Ended:
-                    isDragging = false;
-                    myBody.velocity = Vector2.zero; // Stop movement when touch ends
-                    break;
-            }
+        if (Input.GetAxisRaw("Horizontal") < 0f)
+        {
+            myBody.velocity = new Vector2(-movespeed, myBody.velocity.y);
         }
     }
 
-    public void PlatformMove(float x)
+    public void platformMove(float x)
     {
         myBody.velocity = new Vector2(x, myBody.velocity.y);
     }

@@ -14,6 +14,7 @@ public class GameManager2 : MonoBehaviour
 
     private int score = 0;
     private int bestScore = 0;
+    public bool isGameOver;
 
     private void Awake()
     {
@@ -30,44 +31,61 @@ public class GameManager2 : MonoBehaviour
 
     void Start()
     {
+        InitializeGame();
+    }
+
+    void InitializeGame()
+    {
         bestScore = PlayerPrefs.GetInt("BestScore", 0);
-        gameOverPanel.SetActive(false);  // Make sure the GameOverPanel is hidden at start
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
+        isGameOver = false;
+        score = 0;
     }
 
     public void AddScore(int points)
     {
-        score += points;
+        if (!isGameOver)
+        {
+            score += points;
+        }
     }
 
     public void GameOver()
     {
-        gameOverPanel.SetActive(true);
-        scoreText.text = "Score: " + score.ToString();
+        if (isGameOver) return;
+
+        isGameOver = true;
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(true);
+        }
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + score.ToString();
+        }
         if (score > bestScore)
         {
             bestScore = score;
             PlayerPrefs.SetInt("BestScore", bestScore);
         }
-        bestScoreText.text = "Best Score: " + bestScore.ToString();
+        if (bestScoreText != null)
+        {
+            bestScoreText.text = "Best Score: " + bestScore.ToString();
+        }
     }
 
     public void RestartGame()
     {
-        // Reset the score
-        score = 0;
-        // Hide the game over panel
-        gameOverPanel.SetActive(false);
-        // Load the Gameplay scene again
-        SceneManager.LoadScene("Gameplay");
+        InitializeGame();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void GoToHome()
     {
-        // Reset the game state
-        score = 0;
-        gameOverPanel.SetActive(false);
-
-        // Load the Start Menu scene
+        InitializeGame();
         SceneManager.LoadScene("Start Menu");
     }
 }

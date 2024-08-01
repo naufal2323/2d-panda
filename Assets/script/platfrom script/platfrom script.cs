@@ -11,6 +11,7 @@ public class platformscript : MonoBehaviour
 
     private Animator anim;
     private Collider2D spikeCollider;
+    private Animator platformAnimator;
 
     void Awake()
     {
@@ -23,10 +24,21 @@ public class platformscript : MonoBehaviour
         {
             spikeCollider = GetComponent<Collider2D>();
         }
+
+        platformAnimator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        if (GameManager2.instance != null && GameManager2.instance.isGameOver)
+        {
+            if (platformAnimator != null)
+            {
+                platformAnimator.speed = 0;
+            }
+            return;
+        }
+
         Move();
     }
 
@@ -63,16 +75,18 @@ public class platformscript : MonoBehaviour
             {
                 if (playerIndicator != null && playerIndicator.hasShield)
                 {
-                    playerIndicator.UseShield(); // Use the shield and prevent player from dying
+                    playerIndicator.UseShield();
                     Debug.Log("Shield used! Player is safe.");
-                    spikeCollider.isTrigger = false; // Disable trigger to allow player to stand on spike
+                    spikeCollider.isTrigger = false;
                 }
                 else
                 {
                     target.transform.position = new Vector2(1000f, 1000f);
                     SoundManager.instance.GameOverSound();
-                    GameManager.instance.RestartGame();
-                    GameManager2.instance.GameOver();
+                    if (GameManager2.instance != null)
+                    {
+                        GameManager2.instance.GameOver();
+                    }
                 }
             }
         }
@@ -82,7 +96,7 @@ public class platformscript : MonoBehaviour
     {
         if (target.CompareTag("Player") && is_Spike)
         {
-            spikeCollider.isTrigger = true; // Re-enable trigger when player leaves spike platform
+            spikeCollider.isTrigger = true;
         }
     }
 
@@ -105,7 +119,6 @@ public class platformscript : MonoBehaviour
 
             if (is_Spike && playerIndicator != null && playerIndicator.hasShield)
             {
-                // Prevent any further action, allowing player to stay on spiked platform
                 return;
             }
         }
@@ -129,7 +142,6 @@ public class platformscript : MonoBehaviour
 
             if (is_Spike && playerIndicator != null && playerIndicator.hasShield)
             {
-                // Prevent any further action, allowing player to stay on spiked platform
                 return;
             }
         }

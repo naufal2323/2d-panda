@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource music;
 
     [SerializeField]
-    private AudioClip landClip, deathClip, iceBreakClip, gameOverClip, buttonClickClip; // Tambahkan buttonClickClip
+    private AudioClip landClip, deathClip, iceBreakClip, gameOverClip, buttonClickClip, powerCoinClip; // Tambahkan buttonClickClip
 
     private void Awake()
     {
@@ -43,6 +43,12 @@ public class SoundManager : MonoBehaviour
     {
         soundFX.clip = deathClip;
         soundFX.Play();
+    }
+
+    // Method untuk memutar suara power coin
+    public void PowerCoinSound()
+    {
+        soundFX.PlayOneShot(powerCoinClip);
     }
 
     public void GameOverSound()
@@ -127,6 +133,22 @@ public class SoundManager : MonoBehaviour
     {
         PlayButtonClickSound();
         Debug.Log("Back to Previous Menu");
+        // Logic untuk kembali ke menu sebelumnya
+    }
+
+    // Method untuk kembali ke start menu dri game over 
+    public void QuitHomeGO()
+    {
+        PlayButtonClickSound();
+        Debug.Log("Game Quit GO");
+        Application.Quit();
+    }
+
+    // Method untuk memulai ulang game 
+    public void Restart()
+    {
+        PlayButtonClickSound();
+        Debug.Log("Restart game ");
         // Logic untuk kembali ke menu sebelumnya
     }
 }

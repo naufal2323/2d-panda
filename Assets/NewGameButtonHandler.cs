@@ -10,6 +10,8 @@ public class NewGameButtonHandler : MonoBehaviour
     public Button backButton;
     public Button muteMusicButton;
     public Button muteSFXButton;
+    public Button quithomegameover;
+    public Button restart;
 
     private void Start()
     {
@@ -23,6 +25,8 @@ public class NewGameButtonHandler : MonoBehaviour
             backButton.onClick.AddListener(SoundManager.instance.Back);
             muteMusicButton.onClick.AddListener(SoundManager.instance.MuteMusic);
             muteSFXButton.onClick.AddListener(SoundManager.instance.MuteSFX);
+            quithomegameover.onClick.AddListener(SoundManager.instance.QuitHomeGO);
+            restart.onClick.AddListener(SoundManager.instance.Restart);
         }
         else
         {

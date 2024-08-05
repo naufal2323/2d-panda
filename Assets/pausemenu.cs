@@ -10,8 +10,8 @@ public class pausemenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Kode di sini dijalankan sekali pada awal saat objek dengan script ini diaktifkan.
-        // Saat ini, tidak ada yang dilakukan pada method Start().
+        // Pastikan waktu berjalan normal saat memulai scene
+        Time.timeScale = 1f;
     }
 
     // Method untuk toggle pause state
@@ -37,6 +37,8 @@ public class pausemenu : MonoBehaviour
     // Method untuk keluar dan kembali ke Start Menu
     public void QuitToStartMenu()
     {
+        // Pastikan waktu berjalan normal sebelum pindah scene
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Start Menu");
     }
 

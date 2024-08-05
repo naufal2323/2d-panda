@@ -16,6 +16,7 @@ public class PowerCoinScript : MonoBehaviour
                 if (playerIndicator.currentPowerCoin < playerIndicator.maxPowerCoin)
                 {
                     playerIndicator.AddPower(powerValue);
+                    SoundManager.instance.PowerCoinSound(); // Memutar suara saat koin diambil
                     Destroy(gameObject); // Hancurkan koin setelah diambil
                 }
             }

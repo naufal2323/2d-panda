@@ -10,6 +10,7 @@ public class PanelSwitcher : MonoBehaviour
     {
         MainMenuPanel.SetActive(false);
         SettingsPanel.SetActive(true);
+        
     }
 
     // Method untuk kembali ke panel utama

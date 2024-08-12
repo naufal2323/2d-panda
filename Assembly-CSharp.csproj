@@ -76,6 +76,7 @@
     <Compile Include="Assets\MainMenuController.cs" />
     <Compile Include="Assets\script\GameManager2.cs" />
     <Compile Include="Assets\script\indicator power coin script\PowerCoinBar.cs" />
+    <Compile Include="Assets\canvasmanager.cs" />
     <Compile Include="Assets\menusfx.cs" />
     <Compile Include="Assets\script\powertext.cs" />
     <Compile Include="Assets\PanelSwitcher.cs" />

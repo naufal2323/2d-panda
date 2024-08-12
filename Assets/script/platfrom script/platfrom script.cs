@@ -27,6 +27,10 @@ public class PlatformScript : MonoBehaviour
 
     void Update()
     {
+        if (GameManager2.instance != null && GameManager2.instance.isGameOver)
+        {
+            return; // Stop execution if the game is over
+        }
         Move();
     }
 
@@ -71,7 +75,6 @@ public class PlatformScript : MonoBehaviour
                 {
                     target.transform.position = new Vector2(1000f, 1000f); // Simulate player "death"
                     SoundManager.instance.GameOverSound();
-                    GameManager.instance.RestartGame();
                     GameManager2.instance.GameOver();
                 }
             }

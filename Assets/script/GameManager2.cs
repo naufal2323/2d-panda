@@ -55,6 +55,7 @@ public class GameManager2 : MonoBehaviour
 
     public void GameOver()
     {
+        DontDestroyOnLoad(gameObject);
         if (isGameOver) return;
 
         isGameOver = true;
@@ -75,7 +76,10 @@ public class GameManager2 : MonoBehaviour
         {
             bestScoreText.text = "Best Score: " + bestScore.ToString();
         }
+
+        // Any other game over logic
     }
+
 
     public void RestartGame()
     {
@@ -88,4 +92,6 @@ public class GameManager2 : MonoBehaviour
         InitializeGame();
         SceneManager.LoadScene("Start Menu");
     }
+
+
 }

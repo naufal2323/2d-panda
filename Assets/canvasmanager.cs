@@ -12,7 +12,7 @@ public class canvasmanager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(g ameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {

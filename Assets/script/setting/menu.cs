@@ -17,6 +17,10 @@ public class menu : MonoBehaviour
     public void ButtonIngame()
     {
         SceneManager.LoadScene(1);
+        if(PanelSwitcher._instance != null)
+        {
+            PanelSwitcher._instance.NotifyEnterNewGame();
+        }
     }
 
     public void ButtonMute()

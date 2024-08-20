@@ -21,7 +21,7 @@ public class GameManager2 : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject); // Baris ini dihapus
         }
         else
         {
@@ -55,7 +55,6 @@ public class GameManager2 : MonoBehaviour
 
     public void GameOver()
     {
-        DontDestroyOnLoad(gameObject);
         if (isGameOver) return;
 
         isGameOver = true;
@@ -80,7 +79,6 @@ public class GameManager2 : MonoBehaviour
         // Any other game over logic
     }
 
-
     public void RestartGame()
     {
         InitializeGame();
@@ -92,6 +90,4 @@ public class GameManager2 : MonoBehaviour
         InitializeGame();
         SceneManager.LoadScene("Start Menu");
     }
-
-
 }

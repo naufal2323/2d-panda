@@ -23,7 +23,7 @@ public class PlatformSpawner : MonoBehaviour
     void Start()
     {
         currentPlatformSpawnTimer = platformSpawnTimer;
-        playerIndicator = FindObjectOfType<Indicator>();
+        playerIndicator = FindFirstObjectByType<Indicator>();
     }
 
     void Update()

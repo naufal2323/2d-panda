@@ -11,7 +11,7 @@ public class powertext : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        indicator = FindObjectOfType<Indicator>();
+        indicator = FindFirstObjectByType<Indicator>(); // Ganti FindObjectOfType dengan FindFirstObjectByType
         UpdatePowerText();
     }
 

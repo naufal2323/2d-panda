@@ -18,11 +18,26 @@ public class SoundManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject); // Jangan hancurkan objek saat scene berubah
+            InitializeSoundSettings(); // Tambahkan ini untuk inisialisasi mute/unmute
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    private void InitializeSoundSettings()
+    {
+        // Inisialisasi Music Mute
+        int musicMute = PlayerPrefs.GetInt("MusicMute", 0);
+        music.mute = (musicMute == 1);
+
+        // Inisialisasi SFX Mute
+        int sfxMute = PlayerPrefs.GetInt("SFXMute", 0);
+        soundFX.mute = (sfxMute == 1);
+
+        Debug.Log("Initialized Sound Settings - Music Mute: " + music.mute);
+        Debug.Log("Initialized Sound Settings - SFX Mute: " + soundFX.mute);
     }
 
 

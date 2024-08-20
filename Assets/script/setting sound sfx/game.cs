@@ -13,8 +13,13 @@ public class game : MonoBehaviour
         UpdateMuteButton();
     }
 
-    // Method untuk update sprite tombol mute
-    void UpdateMuteButton()
+    public void ButtonMute()
+    {
+        SoundManager.instance.MuteMusic();
+        UpdateMuteButton();
+    }
+
+    private void UpdateMuteButton()
     {
         if (SoundManager.instance.music.mute == true)
         {
@@ -24,12 +29,6 @@ public class game : MonoBehaviour
         {
             buttonMute.image.sprite = spriteMute[0];
         }
-    }
-
-    // Method untuk toggle mute
-    public void ButtonMute()
-    {
-        SoundManager.instance.MuteMusic();
-        UpdateMuteButton();
+        Debug.Log("UpdateMuteButton - Music Mute: " + SoundManager.instance.music.mute);
     }
 }

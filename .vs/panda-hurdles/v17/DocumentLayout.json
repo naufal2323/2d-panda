@@ -3,15 +3,23 @@
   "WorkspaceRootPath": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|d:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\script\\setting\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\setting\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\panelswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\panelswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|d:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\script\\helper script\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\script\\player script\\playerbounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player script\\playerbounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\script\\platfrom script\\platfromspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\platfrom script\\platfromspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\script\\helper script\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\helper script\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\script\\helper script\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\helper script\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,15 +27,15 @@
       "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamemanager2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|d:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\script\\helper script\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\helper script\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|d:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\script\\setting\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\setting\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|d:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|d:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\canvasmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\canvasmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\canvasmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -47,14 +55,6 @@
       "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\coinspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\script\\platfrom script\\platfromspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\platfrom script\\platfromspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\script\\player script\\playerbounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player script\\playerbounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\assets\\script\\player script\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7AC84F3C-6079-1AE4-7612-611BB2D3E964}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player script\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -66,11 +66,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "platfromSpawner.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\script\\platfrom script\\platfromSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\script\\platfrom script\\platfromSpawner.cs",
@@ -79,7 +79,8 @@
               "ViewState": "AQIAAAkAAAAAAAAAAAAUwBkAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T07:54:19.56Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -96,7 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "menu.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\script\\setting\\menu.cs",
               "RelativeDocumentMoniker": "Assets\\script\\setting\\menu.cs",
@@ -109,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "SoundManager.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\script\\Helper script\\SoundManager.cs",
               "RelativeDocumentMoniker": "Assets\\script\\Helper script\\SoundManager.cs",
@@ -122,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\script\\Helper script\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\script\\Helper script\\GameManager.cs",
@@ -135,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "game.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\game.cs",
               "RelativeDocumentMoniker": "Assets\\game.cs",
@@ -143,12 +144,11 @@
               "RelativeToolTip": "Assets\\game.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T12:35:28.4Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-12T12:35:28.4Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "canvasmanager.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\canvasmanager.cs",
               "RelativeDocumentMoniker": "Assets\\canvasmanager.cs",
@@ -156,25 +156,24 @@
               "RelativeToolTip": "Assets\\canvasmanager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T04:24:13.391Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-12T04:24:13.391Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "PanelSwitcher.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\PanelSwitcher.cs",
               "RelativeDocumentMoniker": "Assets\\PanelSwitcher.cs",
               "ToolTip": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\PanelSwitcher.cs",
               "RelativeToolTip": "Assets\\PanelSwitcher.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAFAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwB4AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-12T04:18:11.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 1,
               "Title": "playerbounds.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\script\\player script\\playerbounds.cs",
               "RelativeDocumentMoniker": "Assets\\script\\player script\\playerbounds.cs",
@@ -182,11 +181,12 @@
               "RelativeToolTip": "Assets\\script\\player script\\playerbounds.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T07:54:19.514Z"
+              "WhenOpened": "2024-06-05T07:54:19.514Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "GameManager2.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\script\\GameManager2.cs",
               "RelativeDocumentMoniker": "Assets\\script\\GameManager2.cs",
@@ -199,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "CoinSpawner.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\CoinSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\CoinSpawner.cs",
@@ -211,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "player movement.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\script\\player script\\player movement.cs",
               "RelativeDocumentMoniker": "Assets\\script\\player script\\player movement.cs",
@@ -219,12 +219,11 @@
               "RelativeToolTip": "Assets\\script\\player script\\player movement.cs",
               "ViewState": "AQIAACMAAAAAAAAAAAAgwEkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T07:54:19.494Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T07:54:19.494Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "pausemenu.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\pausemenu.cs",
               "RelativeDocumentMoniker": "Assets\\pausemenu.cs",
@@ -232,12 +231,11 @@
               "RelativeToolTip": "Assets\\pausemenu.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T07:38:46.663Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-24T07:38:46.663Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "platfrom script.cs",
               "DocumentMoniker": "D:\\unity project\\unity gdd project 2d casual game\\panda-hurdles\\Assets\\script\\platfrom script\\platfrom script.cs",
               "RelativeDocumentMoniker": "Assets\\script\\platfrom script\\platfrom script.cs",

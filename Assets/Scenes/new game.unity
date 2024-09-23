@@ -5240,6 +5240,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 5800769968291786203, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110784541129923265, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
+      propertyPath: moveSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110784541129923265, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
+      propertyPath: gravityScale
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110784541129923265, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
+      propertyPath: smoothFactor
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110784541129923265, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
+      propertyPath: swipeThreshold
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 9033965390176060716, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
       propertyPath: m_IsTrigger
       value: 0

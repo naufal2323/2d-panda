@@ -6,4 +6,4 @@
 UserSettings/Layouts/default-2023.dwlt
 
 .vs/
-.vs/*
+.vs/**/*

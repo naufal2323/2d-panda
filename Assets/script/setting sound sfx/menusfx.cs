@@ -9,44 +9,28 @@ public class menusfx : MonoBehaviour
     public Sprite[] spriteMute; // 0 = on 1 = off
     public Button buttonMute;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        if (SoundManager.instance.soundFX.mute == true)
-        {
-
-            buttonMute.image.sprite = spriteMute[1];
-        }
-        else
-        {
-            buttonMute.image.sprite = spriteMute[0];
-        }
+        UpdateMuteButton();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    public void ButtonIngame()
-    {
-        SceneManager.LoadScene(1);
-    }
 
     public void ButtonMuteSFX()
     {
-        SoundManager.instance.ToggleSFXMute();
+        SoundManager.instance.MuteSFX();
+        UpdateMuteButton();
+    }
 
+    private void UpdateMuteButton()
+    {
         if (SoundManager.instance.soundFX.mute == true)
         {
-
             buttonMute.image.sprite = spriteMute[1];
         }
         else
         {
-
             buttonMute.image.sprite = spriteMute[0];
         }
+        Debug.Log("UpdateMuteButton - SFX Mute: " + SoundManager.instance.soundFX.mute);
     }
 }

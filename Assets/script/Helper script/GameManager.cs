@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     public static GameManager instance;
 
@@ -12,16 +13,17 @@ public class GameManager : MonoBehaviour {
             instance = this;
     }
 
-    public void RestartGame ()
+    public void RestartGame()
     {
         Invoke("RestartAfterTime", 2f);
     }
 
-    void RestartAfterTime ()
+    void RestartAfterTime()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay");
+     
+
+        Debug.Log("Game Restart Triggered, but no scene reloading.");
+
+        
     }
- 
-
-
-} //clas
+}

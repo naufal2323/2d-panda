@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D myBody;
-    public float moveSpeed = 8f;  // Tingkatkan kecepatan gerakan horizontal
-    public float swipeThreshold = 30f; // Turunkan threshold untuk lebih responsif
+    public float moveSpeed = 12f;  // Tingkatkan kecepatan gerakan horizontal
+    public float swipeThreshold = 0.05f; // Turunkan threshold untuk lebih responsif
     public float smoothFactor = 0.2f;  // Percepat interpolasi untuk membuat gerakan lebih halus
-  
 
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
@@ -18,12 +17,22 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
-       
     }
 
-    void Update()
+    void Movechar()
+    {
+        // Menggunakan Time.deltaTime untuk menjaga konsistensi di semua platform
+        myBody.position += new Vector2(targetVelocity.x, targetVelocity.y) * Time.deltaTime;
+    }
+
+    private void Update()
     {
         HandleTouch();
+    }
+
+    void FixedUpdate()
+    {
+        Movechar();
     }
 
     void HandleTouch()
@@ -45,22 +54,22 @@ public class PlayerMovement : MonoBehaviour
                         endTouchPosition = touch.position;
                         Vector2 swipeDirection = endTouchPosition - startTouchPosition;
 
+                        // Tidak perlu membagi dengan resolusi layar, cukup gunakan vektor pergerakan langsung
+                        swipeDirection.Normalize();  // Normalisasi untuk mendapatkan arah swipe
+
                         // Cek apakah swipe lebih panjang dari threshold untuk mendeteksi gerakan horizontal
-                        if (swipeDirection.magnitude > swipeThreshold)
+                        if (Mathf.Abs(swipeDirection.x) > swipeThreshold)
                         {
-                            if (Mathf.Abs(swipeDirection.x) > Mathf.Abs(swipeDirection.y))
+                            // Gerakan horizontal (swipe kanan atau kiri)
+                            if (swipeDirection.x > 0)
                             {
-                                // Gerakan horizontal (swipe kanan atau kiri)
-                                if (swipeDirection.x > 0)
-                                {
-                                    // Gerak kanan
-                                    targetVelocity = new Vector2(moveSpeed, myBody.velocity.y);
-                                }
-                                else
-                                {
-                                    // Gerak kiri
-                                    targetVelocity = new Vector2(-moveSpeed, myBody.velocity.y);
-                                }
+                                // Gerak kanan
+                                targetVelocity = new Vector2(moveSpeed, 0);
+                            }
+                            else
+                            {
+                                // Gerak kiri
+                                targetVelocity = new Vector2(-moveSpeed, 0);
                             }
 
                             // Perbarui startTouchPosition untuk mendukung swipe berkelanjutan
@@ -77,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Lerp untuk perpindahan yang lebih mulus hanya pada sumbu x
-        myBody.velocity = new Vector2(Mathf.Lerp(myBody.velocity.x, targetVelocity.x, smoothFactor), myBody.velocity.y);
+        myBody.position += new Vector2(targetVelocity.x, targetVelocity.y) * Time.deltaTime;
     }
 
     public void PlatformMove(float x)

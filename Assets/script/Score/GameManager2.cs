@@ -87,7 +87,15 @@ public class GameManager2 : MonoBehaviour
 
     public void GoToHome()
     {
+        // Inisialisasi game atau hal-hal lainnya yang perlu dilakukan sebelum pindah scene
         InitializeGame();
+
+        // Periksa platform: Di mobile, hanya pindah ke "Start Menu" tanpa keluar aplikasi
+    #if UNITY_ANDROID || UNITY_IOS
         SceneManager.LoadScene("Start Menu");
+    #else
+        SceneManager.LoadScene("Start Menu");
+    #endif
     }
+
 }

@@ -22,14 +22,12 @@ public class pausemenu : MonoBehaviour
     // Method untuk toggle pause state
     public void PauseToggle()
     {
-        // Jika menu jeda tidak aktif
         if (!PauseMenu.activeSelf)
         {
             // Membekukan waktu dalam permainan (Time.timeScale = 0) dan menampilkan menu jeda.
             Time.timeScale = 0f;
             PauseMenu.SetActive(true);
         }
-        // Jika menu jeda aktif
         else
         {
             // Mengembalikan waktu permainan ke kecepatan normal (Time.timeScale = 1) dan menyembunyikan menu jeda.
@@ -38,18 +36,25 @@ public class pausemenu : MonoBehaviour
         }
     }
 
-    // Method untuk keluar dari permainan
+    // Method untuk keluar ke Start Menu
     public void QuitToStartMenu()
     {
+        Debug.Log("Returning to Start Menu");
+
         // Mengembalikan waktu permainan ke kecepatan normal sebelum keluar ke Start Menu
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Start Menu");
+
+        // Periksa platform: di mobile, jangan keluar dari aplikasi
+        #if UNITY_ANDROID || UNITY_IOS
+            SceneManager.LoadScene("Start Menu");
+        #else
+            SceneManager.LoadScene("Start Menu");
+        #endif
     }
 
     // Method untuk melanjutkan permainan setelah dijeda
     public void Resume()
     {
-        // Mengembalikan waktu permainan ke kecepatan normal (Time.timeScale = 1) dan menyembunyikan menu jeda.
         Time.timeScale = 1f;
         PauseMenu.SetActive(false);
     }

@@ -45,11 +45,11 @@ public class pausemenu : MonoBehaviour
         Time.timeScale = 1f;
 
         // Periksa platform: di mobile, jangan keluar dari aplikasi
-        #if UNITY_ANDROID || UNITY_IOS
+#if UNITY_ANDROID || UNITY_IOS
+        SceneManager.LoadScene(0);
+#else
             SceneManager.LoadScene("Start Menu");
-        #else
-            SceneManager.LoadScene("Start Menu");
-        #endif
+#endif
     }
 
     // Method untuk melanjutkan permainan setelah dijeda

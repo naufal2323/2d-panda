@@ -132,7 +132,7 @@ public class SoundManager : MonoBehaviour
     {
         PlayButtonClickSound();
         Debug.Log("Game Quit");
-        Application.Quit();
+        //Application.Quit();
     }
 
     // Method untuk membuka settings
@@ -156,7 +156,7 @@ public class SoundManager : MonoBehaviour
     {
         PlayButtonClickSound();
         Debug.Log("Game Quit GO");
-        Application.Quit();
+        //Application.Quit();
     }
 
     // Method untuk memulai ulang game 

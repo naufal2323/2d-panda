@@ -21,7 +21,7 @@ public class NewGameButtonHandler : MonoBehaviour
             pauseButton.onClick.AddListener(SoundManager.instance.PauseGame);
             resumeButton.onClick.AddListener(SoundManager.instance.ResumeGame);
             settingsButton.onClick.AddListener(SoundManager.instance.OpenSettings);
-            // quitButton.onClick.AddListener(SoundManager.instance.QuitGame);
+            quitButton.onClick.AddListener(SoundManager.instance.QuitGame);
             backButton.onClick.AddListener(SoundManager.instance.Back);
             muteMusicButton.onClick.AddListener(SoundManager.instance.MuteMusic);
             muteSFXButton.onClick.AddListener(SoundManager.instance.MuteSFX);

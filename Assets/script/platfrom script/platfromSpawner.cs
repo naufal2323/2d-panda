@@ -20,10 +20,19 @@ public class PlatformSpawner : MonoBehaviour
     private int platformSpawnCount;
     private Indicator playerIndicator;
 
+    // Object pooling
+    private Queue<GameObject> platformPool = new Queue<GameObject>();
+    private Queue<GameObject> coinPool = new Queue<GameObject>();
+    public int initialPoolSize = 10;
+
     void Start()
     {
         currentPlatformSpawnTimer = platformSpawnTimer;
         playerIndicator = FindFirstObjectByType<Indicator>();
+
+        // Initialize object pools
+        InitializePool(platformPrefab, platformPool, initialPoolSize);
+        InitializePool(coinPrefab, coinPool, initialPoolSize);
     }
 
     void Update()
@@ -47,7 +56,7 @@ public class PlatformSpawner : MonoBehaviour
             newPlatform.transform.parent = transform;
         }
 
-        currentPlatformSpawnTimer = platformSpawnTimer; // Reset the timer after spawning a platform
+        currentPlatformSpawnTimer = platformSpawnTimer; // Reset timer setelah spawn platform
     }
 
     GameObject GetPlatformToSpawn(Vector3 position)
@@ -57,25 +66,25 @@ public class PlatformSpawner : MonoBehaviour
         switch (platformSpawnCount)
         {
             case 1:
-                platformToSpawn = Instantiate(platformPrefab, position, Quaternion.identity);
+                platformToSpawn = GetFromPool(platformPrefab, position);
                 TrySpawnCoin(platformToSpawn);
                 break;
             case 2:
                 platformToSpawn = Random.Range(0, 2) > 0
-                    ? Instantiate(platformPrefab, position, Quaternion.identity)
-                    : Instantiate(movingPlatforms[Random.Range(0, movingPlatforms.Length)], position, Quaternion.identity);
+                    ? GetFromPool(platformPrefab, position)
+                    : GetFromPool(movingPlatforms[Random.Range(0, movingPlatforms.Length)], position);
                 TrySpawnCoin(platformToSpawn);
                 break;
             case 3:
                 platformToSpawn = Random.Range(0, 2) > 0
-                    ? Instantiate(platformPrefab, position, Quaternion.identity)
-                    : Instantiate(spikedPlatformPrefab, position, Quaternion.identity);
+                    ? GetFromPool(platformPrefab, position)
+                    : GetFromPool(spikedPlatformPrefab, position);
                 TrySpawnCoin(platformToSpawn);
                 break;
             case 4:
                 platformToSpawn = Random.Range(0, 2) > 0
-                    ? Instantiate(platformPrefab, position, Quaternion.identity)
-                    : Instantiate(breakablePlatform, position, Quaternion.identity);
+                    ? GetFromPool(platformPrefab, position)
+                    : GetFromPool(breakablePlatform, position);
                 TrySpawnCoin(platformToSpawn);
                 platformSpawnCount = 0;
                 break;
@@ -86,28 +95,78 @@ public class PlatformSpawner : MonoBehaviour
 
     void TrySpawnCoin(GameObject platform)
     {
-        // Check if player has less than max coins before spawning a new coin
+        // Cek jika pemain memiliki koin kurang dari maksimum sebelum spawn koin
         if (playerIndicator != null && playerIndicator.currentPowerCoin < playerIndicator.maxPowerCoin && Random.value < coinSpawnChance)
         {
             Vector3 coinPosition = platform.transform.position;
-            coinPosition.y += 0.5f; // Set position above platform
+            coinPosition.y += 0.5f; // Set posisi di atas platform
 
-            // Add variation to the coin's X position with margin
+            // Tambahkan variasi pada posisi X koin dengan margin
             float platformWidth = platform.GetComponent<SpriteRenderer>().bounds.size.x;
-            float margin = platformWidth * 0.1f; // 10% margin on both sides
+            float margin = platformWidth * 0.1f; // Margin 10% di kedua sisi
             coinPosition.x += Random.Range(-platformWidth / 2 + margin, platformWidth / 2 - margin);
 
-            GameObject newCoin = Instantiate(coinPrefab, coinPosition, Quaternion.identity);
+            GameObject newCoin = GetFromPool(coinPrefab, coinPosition);
             newCoin.transform.parent = transform;
 
-            // Disable gravity on the coin's Rigidbody2D
-            Rigidbody2D rb = newCoin.GetComponent<Rigidbody2D>();
+            Debug.Log("Coin spawned at position: " + coinPosition);
+        }
+    }
+
+    // Method untuk mengambil objek dari pool atau membuat yang baru jika pool kosong
+    GameObject GetFromPool(GameObject prefab, Vector3 position)
+    {
+        Queue<GameObject> pool = prefab == coinPrefab ? coinPool : platformPool;
+
+        if (pool.Count > 0)
+        {
+            GameObject obj = pool.Dequeue();
+            obj.transform.position = position;
+            obj.SetActive(true);
+
+            // Set gravity scale to 0 if it's a coin
+            if (prefab == coinPrefab)
+            {
+                Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.gravityScale = 0;
+                }
+            }
+
+            return obj;
+        }
+
+        return Instantiate(prefab, position, Quaternion.identity);
+    }
+
+    // Method untuk menginisialisasi pool objek
+    void InitializePool(GameObject prefab, Queue<GameObject> pool, int size)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            GameObject obj = Instantiate(prefab);
+            obj.SetActive(false);
+            pool.Enqueue(obj);
+        }
+    }
+
+    // Method untuk menonaktifkan objek dan memasukkannya kembali ke pool
+    public void ReturnToPool(GameObject obj, GameObject prefab)
+    {
+        obj.SetActive(false);
+        Queue<GameObject> pool = prefab == coinPrefab ? coinPool : platformPool;
+
+        // Set gravity scale to 0 if it's a coin
+        if (prefab == coinPrefab)
+        {
+            Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
                 rb.gravityScale = 0;
             }
-
-            Debug.Log("Coin spawned at position: " + coinPosition);
         }
+
+        pool.Enqueue(obj);
     }
 }

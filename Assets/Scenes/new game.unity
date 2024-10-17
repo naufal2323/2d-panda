@@ -2832,9 +2832,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.027239216}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.3727848
 --- !u!1 &1060092710
 GameObject:
   m_ObjectHideFlags: 0
@@ -5495,6 +5495,7 @@ MonoBehaviour:
   platformSpawnTimer: 1
   minX: -2
   maxX: 2
+  initialPoolSize: 10
 --- !u!4 &2004465138
 Transform:
   m_ObjectHideFlags: 0
@@ -5504,7 +5505,7 @@ Transform:
   m_GameObject: {fileID: 2004465136}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -6.24, z: 0}
+  m_LocalPosition: {x: -0.28, y: -6.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5671,6 +5672,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 993872592835772662, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2307061394923457284, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.02
@@ -5717,11 +5722,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800769968291786203, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
       propertyPath: m_GravityScale
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7110784541129923265, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
       propertyPath: moveSpeed
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7110784541129923265, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
       propertyPath: gravityScale
@@ -5729,11 +5734,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7110784541129923265, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
       propertyPath: smoothFactor
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7110784541129923265, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
       propertyPath: swipeThreshold
-      value: 0.1
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033965390176060716, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
+      propertyPath: m_Size.x
+      value: 2.9299998
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033965390176060716, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
+      propertyPath: m_Size.y
+      value: 2.766031
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033965390176060716, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033965390176060716, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.013015628
       objectReference: {fileID: 0}
     - target: {fileID: 9033965390176060716, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
       propertyPath: m_IsTrigger

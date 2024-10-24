@@ -122,12 +122,12 @@ public class PlatformScript : MonoBehaviour
 
             if (movingPlatformLeft)
             {
-                playerMovement.PlatformMove(-1f);
+                playerMovement.PlatformMove(-0.5f);
             }
 
             if (movingPlatformRight)
             {
-                playerMovement.PlatformMove(1f);
+                playerMovement.PlatformMove(0.5f);
             }
 
             Indicator playerIndicator = target.gameObject.GetComponent<Indicator>();

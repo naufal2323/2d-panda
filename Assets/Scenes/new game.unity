@@ -5721,12 +5721,16 @@ PrefabInstance:
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 5800769968291786203, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800769968291786203, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
       propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7110784541129923265, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
       propertyPath: moveSpeed
-      value: 1.5
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 7110784541129923265, guid: a7db06c6e6168fe4b895db46fb36c6c4, type: 3}
       propertyPath: gravityScale

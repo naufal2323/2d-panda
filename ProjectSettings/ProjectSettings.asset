@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: unity gdd project 2d casual game
+  productName: Panda Hurdles
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -288,7 +288,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: ec2ee5c6e543f00459b1a0dcfb9acae9, type: 3}
+      m_Icon: {fileID: 2800000, guid: 096fcc8591cd39b49809e3bb331cf6d5, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

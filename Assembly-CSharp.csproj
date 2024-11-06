@@ -78,12 +78,14 @@
     <Compile Include="Assets\script\setting sound sfx\menusfx.cs" />
     <Compile Include="Assets\script\setting sound sfx\NewGameButtonHandler.cs" />
     <Compile Include="Assets\script\Score\Score.cs" />
+    <Compile Include="Assets\play.cs" />
     <Compile Include="Assets\pause.cs" />
     <Compile Include="Assets\MainMenuController.cs" />
     <Compile Include="Assets\script\indicator power coin script\PlayerShield.cs" />
     <Compile Include="Assets\script\Helper script\SoundManager.cs" />
     <Compile Include="Assets\script\player script\player movement.cs" />
     <Compile Include="Assets\script\indicator power coin script\PowerCoinBar.cs" />
+    <Compile Include="Assets\popup.cs" />
     <Compile Include="Assets\script\platfrom script\platfromSpawner.cs" />
     <Compile Include="Assets\canvasmanager.cs" />
   </ItemGroup>

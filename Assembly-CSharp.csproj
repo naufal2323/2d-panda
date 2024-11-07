@@ -66,6 +66,7 @@
     <Compile Include="Assets\script\indicator power coin script\powertext.cs" />
     <Compile Include="Assets\script\platfrom script\platfrom script.cs" />
     <Compile Include="Assets\script\player script\playerbounds.cs" />
+    <Compile Include="Assets\auto.cs" />
     <Compile Include="Assets\script\setting sound sfx\game.cs" />
     <Compile Include="Assets\GameInitializer.cs" />
     <Compile Include="Assets\script\Score\GameManager2.cs" />

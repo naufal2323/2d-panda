@@ -8,26 +8,32 @@ public class menu : MonoBehaviour
 {
     public Sprite[] spriteMute; // 0 = on, 1 = off
     public Button buttonMute;
-    public GameObject tutorialCanvas; // Tambahkan referensi ke Canvas tutorial
-
-    private bool tutorialShown = false; // Flag untuk memastikan tutorial hanya ditampilkan sekali
+    public GameObject tutorialCanvas; // Referensi ke Canvas tutorial
 
     void Start()
     {
         UpdateMuteButton();
+
+        // Cek apakah tutorial sudah pernah ditampilkan
+        if (!PlayerPrefs.HasKey("TutorialShown"))
+        {
+            PlayerPrefs.SetInt("TutorialShown", 0); // 0 = belum ditampilkan, 1 = sudah
+            PlayerPrefs.Save();
+        }
     }
 
     public void ButtonIngame()
     {
-        if (!tutorialShown)
+        // Jika tutorial belum pernah ditampilkan, tampilkan tutorial
+        if (PlayerPrefs.GetInt("TutorialShown") == 0)
         {
-            // Tampilkan tutorial terlebih dahulu
             ShowTutorial();
-            tutorialShown = true; // Set flag agar tutorial hanya ditampilkan sekali
+            PlayerPrefs.SetInt("TutorialShown", 1); // Tandai bahwa tutorial sudah ditampilkan
+            PlayerPrefs.Save();
         }
         else
         {
-            // Jika tutorial sudah ditampilkan, lanjutkan ke scene permainan
+            // Jika tutorial sudah pernah ditampilkan, langsung mulai game
             StartGame();
         }
     }

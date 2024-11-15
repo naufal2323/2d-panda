@@ -14,11 +14,14 @@ public class PlatformSpawner : MonoBehaviour
 
     [Header("Spawn Settings")]
     public float platformSpawnTimer = 2f;
-    public float minX = -2f, maxX = 2f;
+    public float minX = -1.3f; // Memperluas area spawn ke kiri
+    public float maxX = 1.3f;  // Memperluas area spawn ke kanan
+    public float maxPlatformDistance = 1.3f; // Jarak maksimum antar platform
 
     private float currentPlatformSpawnTimer;
     private int platformSpawnCount;
     private Indicator playerIndicator;
+    private Vector3 lastSpawnPosition; // Menyimpan posisi spawn terakhir
 
     // Object pooling
     private Queue<GameObject> platformPool = new Queue<GameObject>();
@@ -30,9 +33,12 @@ public class PlatformSpawner : MonoBehaviour
         currentPlatformSpawnTimer = platformSpawnTimer;
         playerIndicator = FindFirstObjectByType<Indicator>();
 
-        // Initialize object pools
+        // Inisialisasi object pools
         InitializePool(platformPrefab, platformPool, initialPoolSize);
         InitializePool(coinPrefab, coinPool, initialPoolSize);
+
+        // Inisialisasi posisi spawn terakhir
+        lastSpawnPosition = transform.position;
     }
 
     void Update()
@@ -48,7 +54,15 @@ public class PlatformSpawner : MonoBehaviour
 
         platformSpawnCount++;
         Vector3 spawnPosition = transform.position;
-        spawnPosition.x = Random.Range(minX, maxX);
+
+        // Hasilkan posisi x baru dan pastikan tidak terlalu jauh dari platform sebelumnya
+        float newX;
+        do
+        {
+            newX = Random.Range(minX, maxX);
+        } while (Mathf.Abs(newX - lastSpawnPosition.x) > maxPlatformDistance);
+
+        spawnPosition.x = newX;
 
         GameObject newPlatform = GetPlatformToSpawn(spawnPosition);
         if (newPlatform != null)
@@ -56,7 +70,11 @@ public class PlatformSpawner : MonoBehaviour
             newPlatform.transform.parent = transform;
         }
 
-        currentPlatformSpawnTimer = platformSpawnTimer; // Reset timer setelah spawn platform
+        // Update posisi spawn terakhir
+        lastSpawnPosition = spawnPosition;
+
+        // Reset timer setelah spawn platform
+        currentPlatformSpawnTimer = platformSpawnTimer;
     }
 
     GameObject GetPlatformToSpawn(Vector3 position)

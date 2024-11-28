@@ -10,7 +10,7 @@ public class PlatformSpawner : MonoBehaviour
     public GameObject[] movingPlatforms;
     public GameObject breakablePlatform;
     public GameObject coinPrefab;  // Prefab untuk koin
-    public float coinSpawnChance = 0.10f;  // Kesempatan spawn koin
+    public float coinSpawnChance = 10f;  // Kesempatan spawn koin
 
     [Header("Spawn Settings")]
     public float platformSpawnTimer = 2f;

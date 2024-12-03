@@ -18,6 +18,10 @@ public class PlatformSpawner : MonoBehaviour
     public float maxX = 1.3f;  // Memperluas area spawn ke kanan
     public float maxPlatformDistance = 1.3f; // Jarak maksimum antar platform
 
+    [Header("Moving Platform Settings")]
+    public float movingPlatformMinX = -0.5f; // Rentang minimum untuk platform bergerak
+    public float movingPlatformMaxX = 0.5f;  // Rentang maksimum untuk platform bergerak
+
     private float currentPlatformSpawnTimer;
     private int platformSpawnCount;
     private Indicator playerIndicator;
@@ -88,9 +92,22 @@ public class PlatformSpawner : MonoBehaviour
                 TrySpawnCoin(platformToSpawn);
                 break;
             case 2:
-                platformToSpawn = Random.Range(0, 2) > 0
-                    ? GetFromPool(platformPrefab, position)
-                    : GetFromPool(movingPlatforms[Random.Range(0, movingPlatforms.Length)], position);
+                if (Random.Range(0, 2) > 0)
+                {
+                    platformToSpawn = GetFromPool(platformPrefab, position);
+                }
+                else
+                {
+                    // Pastikan moving platform hanya muncul di tengah layar
+                    if (position.x >= movingPlatformMinX && position.x <= movingPlatformMaxX)
+                    {
+                        platformToSpawn = GetFromPool(movingPlatforms[Random.Range(0, movingPlatforms.Length)], position);
+                    }
+                    else
+                    {
+                        platformToSpawn = GetFromPool(platformPrefab, position);
+                    }
+                }
                 TrySpawnCoin(platformToSpawn);
                 break;
             case 3:
@@ -131,7 +148,6 @@ public class PlatformSpawner : MonoBehaviour
         }
     }
 
-    // Method untuk mengambil objek dari pool atau membuat yang baru jika pool kosong
     GameObject GetFromPool(GameObject prefab, Vector3 position)
     {
         Queue<GameObject> pool = prefab == coinPrefab ? coinPool : platformPool;
@@ -158,7 +174,6 @@ public class PlatformSpawner : MonoBehaviour
         return Instantiate(prefab, position, Quaternion.identity);
     }
 
-    // Method untuk menginisialisasi pool objek
     void InitializePool(GameObject prefab, Queue<GameObject> pool, int size)
     {
         for (int i = 0; i < size; i++)
@@ -169,13 +184,11 @@ public class PlatformSpawner : MonoBehaviour
         }
     }
 
-    // Method untuk menonaktifkan objek dan memasukkannya kembali ke pool
     public void ReturnToPool(GameObject obj, GameObject prefab)
     {
         obj.SetActive(false);
         Queue<GameObject> pool = prefab == coinPrefab ? coinPool : platformPool;
 
-        // Set gravity scale to 0 if it's a coin
         if (prefab == coinPrefab)
         {
             Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();

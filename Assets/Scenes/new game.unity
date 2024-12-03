@@ -6040,7 +6040,7 @@ MonoBehaviour:
   - {fileID: 4182382119542949607, guid: 08d4b4847033bf944a641375a4cc05e8, type: 3}
   breakablePlatform: {fileID: 105363569103291598, guid: fdf9c8c1537eccd419c558cbaa0a2649, type: 3}
   coinPrefab: {fileID: 376848781785383702, guid: 01ec9e07ba6bcfc40a01fdf5724fa658, type: 3}
-  coinSpawnChance: 0.5
+  coinSpawnChance: 0.1
   platformSpawnTimer: 1.5
   minX: -1.3
   maxX: 1.3

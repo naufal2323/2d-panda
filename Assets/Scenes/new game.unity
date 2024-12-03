@@ -3034,46 +3034,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019446194}
   m_CullTransparentMesh: 1
---- !u!1 &1029826014 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2569571296324978756, guid: 589f9ea9ac2c5534ea0a9438366b8b86, type: 3}
-  m_PrefabInstance: {fileID: 1387468433284142880}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &1029826020
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029826014}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.027239216}
-  serializedVersion: 2
-  m_Radius: 0.3727848
 --- !u!1 &1037693399
 GameObject:
   m_ObjectHideFlags: 0
@@ -6045,6 +6005,8 @@ MonoBehaviour:
   minX: -1.3
   maxX: 1.3
   maxPlatformDistance: 1.3
+  movingPlatformMinX: -0.5
+  movingPlatformMaxX: 0.5
   initialPoolSize: 10
 --- !u!4 &2004465138
 Transform:
@@ -6136,10 +6098,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2569571296324978756, guid: 589f9ea9ac2c5534ea0a9438366b8b86, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1029826020}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 589f9ea9ac2c5534ea0a9438366b8b86, type: 3}
 --- !u!1001 &1885619123695082927
 PrefabInstance:

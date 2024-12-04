@@ -47,6 +47,8 @@ public class PlatformSpawner : MonoBehaviour
 
     void Update()
     {
+        if (GameManager2.instance.isGameOver) return;
+
         SpawnPlatforms();
     }
 

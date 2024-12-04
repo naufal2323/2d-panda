@@ -91,11 +91,11 @@ public class GameManager2 : MonoBehaviour
         InitializeGame();
 
         // Periksa platform: Di mobile, hanya pindah ke "Start Menu" tanpa keluar aplikasi
-    #if UNITY_ANDROID || UNITY_IOS
+#if UNITY_ANDROID || UNITY_IOS
         SceneManager.LoadScene("Start Menu");
-    #else
+#else
         SceneManager.LoadScene("Start Menu");
-    #endif
+#endif
     }
 
 }

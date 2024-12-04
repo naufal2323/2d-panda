@@ -26,7 +26,14 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Smooth movement using Lerp for horizontal direction
+        if (GameManager2.instance.isGameOver)
+        {
+            // Pastikan pemain berhenti sepenuhnya saat game over
+            myBody.velocity = Vector2.zero;
+            return;
+        }
+
+        // Smooth movement menggunakan Lerp untuk horizontal direction
         Vector2 smoothedVelocity = Vector2.Lerp(myBody.velocity, targetVelocity, smoothFactor);
         myBody.velocity = new Vector2(smoothedVelocity.x, myBody.velocity.y);
     }
@@ -83,5 +90,21 @@ public class PlayerMovement : MonoBehaviour
     public void PlatformMove(float x)
     {
         targetVelocity = new Vector2(x, myBody.velocity.y);
+    }
+
+    // Tambahan fungsi untuk mengatur ulang pemain saat respawn
+    public void RespawnPlayer(Vector2 respawnPosition)
+    {
+        myBody.velocity = Vector2.zero; // Hentikan kecepatan
+        transform.position = respawnPosition; // Set posisi pemain
+        myBody.simulated = true; // Aktifkan physics jika sebelumnya dimatikan
+        GameManager2.instance.isGameOver = false; // Set state game agar aktif kembali
+    }
+
+    // Fungsi untuk menghentikan pemain saat game over
+    public void StopPlayer()
+    {
+        myBody.velocity = Vector2.zero; // Hentikan gerakan
+        myBody.simulated = false; // Nonaktifkan physics agar tidak ada interaksi
     }
 }
